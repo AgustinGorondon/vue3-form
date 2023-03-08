@@ -1,4 +1,5 @@
 export type FormInputValue = string | number | boolean | null;
+export type FormFieldMeta = string | object;
 
 export type RuleName =
   | 'alphabets'
@@ -63,19 +64,18 @@ export type ServerErrors = Record<string, string[]>;
 
 export type ValidationCallback = (status: boolean) => void;
 
-export type FormFieldMeta = string | object;
 
 export interface FormField {
   rules?: (RuleName | Rule)[];
   value?: FormInputValue;
-  meta: FormFieldMeta
+  meta: FormFieldMeta;
 }
 
 export interface FormFieldNormalized {
   name: string;
   rules: (RuleName | Rule)[];
   value: FormInputValue;
-  meta: FormFieldMeta
+  meta: FormFieldMeta;
   errors: Record<string, string> | null;
   serverErrors: string[] | null;
 }
