@@ -1,28 +1,28 @@
+import { ComputedRef } from "vue";
 export type FormInputValue = string | number | boolean | null;
 export type RuleName = 'alphabets' | 'alphabetsLowercase' | 'alphabetsLowercaseOnly' | 'alphabetsOnly' | 'alphabetsUppercase' | 'alphabetsUppercaseOnly' | 'arrayContains' | `arrayContains:${string}` | 'arrayDoesntContain' | `arrayDoesntContain:${string}` | 'date' | 'dateAfter' | `dateAfter:${string}` | 'dateBefore' | `dateBefore:${string}` | 'dateBetween' | `dateBetween:${string}` | 'dateExact' | `dateExact:${string}` | 'dateFormat' | `dateFormat:${string}` | 'email' | 'exact' | `exact:${string}` | 'file' | 'money' | 'name' | 'noSequence' | 'nullable' | 'numbers' | 'numbersOnly' | 'numberBetween' | `numberBetween:${number}:${number}` | 'numberExact' | `numberExact:${number}` | 'numberMin' | `numberMin:${number}` | 'numberMax' | `numberMax:${number}` | 'phone' | 'required' | 'specialCharacters' | 'specialCharactersOnly' | 'stringLength' | `stringLength:${number}` | 'stringMax' | `stringMax:${number}` | 'stringMin' | `stringMin:${number}` | 'url';
 export type FormPropertyKey = 'error' | 'loading' | 'success' | 'touched' | 'valid';
 export type ServerErrors = Record<string, string[]>;
 export type ValidationCallback = (status: boolean) => void;
-export type FormFieldMeta = string | FieldMeta;
 export interface SelectField {
     id: string;
     label: string;
 }
 export interface FieldMeta {
-    list?: Array<SelectField> | null;
+    list?: ComputedRef<Array<SelectField>> | Array<SelectField> | null;
     search?: (query: string | string[]) => void;
 }
 export interface FormField {
     rules?: (RuleName | Rule)[];
     value?: FormInputValue;
     label?: string;
-    meta?: FormFieldMeta;
+    meta?: FieldMeta;
 }
 export interface FormFieldNormalized {
     name: string;
     label: string;
     value: FormInputValue;
-    meta: FormFieldMeta | null;
+    meta: FieldMeta | null;
     rules: (RuleName | Rule)[];
     errors: Record<string, string> | null;
     serverErrors: string[] | null;

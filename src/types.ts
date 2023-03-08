@@ -87,7 +87,7 @@ export interface FormFieldNormalized {
   name: string;
   label: string;
   value: FormInputValue;
-  meta: FormFieldMeta | null;
+  meta: FieldMeta | null;
   rules: (RuleName | Rule)[];
   errors: Record<string, string> | null;
   serverErrors: string[] | null;
