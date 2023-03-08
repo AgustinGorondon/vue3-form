@@ -67,7 +67,7 @@ export const ruleHub: Record<string, Rule> = {
   },
   date: {
     test: ({ value }) => value?.constructor === Date,
-    message: () => 'este campo.',
+    message: () => 'este campo debe ser una fecha.',
   },
   email: {
     test: ({ value }) =>
