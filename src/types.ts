@@ -65,12 +65,6 @@ export type ServerErrors = Record<string, string[]>;
 
 export type ValidationCallback = (status: boolean) => void;
 
-
-export interface SelectField {
-  id: string;
-  label: string;
-}
-
 export interface FieldMeta {
   list?: ComputedRef<any> | any | null;
   search?: (query: string | string[]) => void;
