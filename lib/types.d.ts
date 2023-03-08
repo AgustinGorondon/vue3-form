@@ -9,7 +9,7 @@ export interface SelectField {
     label: string;
 }
 export interface FieldMeta {
-    list?: ComputedRef<any[]> | any | null;
+    list?: ComputedRef<any> | any | null;
     search?: (query: string | string[]) => void;
 }
 export interface FormField {
