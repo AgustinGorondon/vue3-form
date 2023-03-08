@@ -7,13 +7,15 @@ export type ValidationCallback = (status: boolean) => void;
 export interface FormField {
     rules?: (RuleName | Rule)[];
     value?: FormInputValue;
-    meta: FormFieldMeta;
+    label?: string;
+    meta?: FormFieldMeta;
 }
 export interface FormFieldNormalized {
     name: string;
-    rules: (RuleName | Rule)[];
+    label: string;
     value: FormInputValue;
-    meta: FormFieldMeta;
+    meta: FormFieldMeta | null;
+    rules: (RuleName | Rule)[];
     errors: Record<string, string> | null;
     serverErrors: string[] | null;
 }
