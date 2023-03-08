@@ -1,6 +1,6 @@
 import { Ref } from 'vue';
-import { Form, FormField, FormFieldNormalized, FormInputValue, FormProperties, FormPropertyKey, Rule, RuleName, ServerErrors, ValidationCallback } from './types';
-export { Form, FormField, FormFieldNormalized, FormInputValue, FormProperties, FormPropertyKey, Rule, RuleName, ServerErrors, ValidationCallback, };
+import { Form, FormField, FormFieldNormalized, FormFieldMeta, FormInputValue, FormProperties, FormPropertyKey, Rule, RuleName, ServerErrors, ValidationCallback } from './types';
+export { Form, FormField, FormFieldNormalized, FormFieldMeta, FormInputValue, FormProperties, FormPropertyKey, Rule, RuleName, ServerErrors, ValidationCallback, };
 export declare const ruleHub: Record<string, Rule>;
 export declare const getFields: (form: Ref<Form>) => FormFieldNormalized[];
 export declare const getFormData: (form: Ref<Form>) => FormData;
