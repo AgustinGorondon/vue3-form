@@ -63,15 +63,19 @@ export type ServerErrors = Record<string, string[]>;
 
 export type ValidationCallback = (status: boolean) => void;
 
+export type FormFieldMeta = string | object;
+
 export interface FormField {
   rules?: (RuleName | Rule)[];
   value?: FormInputValue;
+  meta: FormFieldMeta
 }
 
 export interface FormFieldNormalized {
   name: string;
   rules: (RuleName | Rule)[];
   value: FormInputValue;
+  meta: FormFieldMeta
   errors: Record<string, string> | null;
   serverErrors: string[] | null;
 }
