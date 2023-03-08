@@ -1,3 +1,5 @@
+import { ComputedRef } from "vue";
+
 export type FormInputValue = string | number | boolean | null;
 
 export type RuleName =
@@ -64,15 +66,13 @@ export type ServerErrors = Record<string, string[]>;
 export type ValidationCallback = (status: boolean) => void;
 
 
-export type FormFieldMeta = string | FieldMeta;
-
 export interface SelectField {
   id: string;
   label: string;
 }
 
 export interface FieldMeta {
-  list?: Array<SelectField> | null;
+  list?: ComputedRef<Array<SelectField>> | Array<SelectField> | null;
   search?: (query: string | string[]) => void;
 }
 
@@ -80,7 +80,7 @@ export interface FormField {
   rules?: (RuleName | Rule)[];
   value?: FormInputValue;
   label?: string;
-  meta?: FormFieldMeta;
+  meta?: FieldMeta;
 }
 
 export interface FormFieldNormalized {
