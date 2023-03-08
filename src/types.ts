@@ -72,7 +72,7 @@ export interface SelectField {
 }
 
 export interface FieldMeta {
-  list?: ComputedRef<any[] | SelectField[]> | Array<SelectField> | null;
+  list?: ComputedRef<any[]> | any | null;
   search?: (query: string | string[]) => void;
 }
 
