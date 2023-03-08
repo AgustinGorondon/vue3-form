@@ -31,19 +31,19 @@ const SEQUENCES = ['abc', '123'];
 export const ruleHub: Record<string, Rule> = {
   alphabets: {
     test: ({ value }) => !!value?.toString().match(/[a-z A-Z]/),
-    message: () => 'this field must contain letters.',
+    message: () => 'este campo debe contener letras.',
   },
   alphabetsLowercase: {
     test: ({ value }) => !!value?.toString().match(/[a-z]/),
-    message: () => 'this field must contain lowercase letters.',
+    message: () => 'este campo debe contener letras minúsculas.',
   },
   alphabetsLowercaseOnly: {
     test: ({ value }) => !!value?.toString().match(/^[a-z]+$/),
-    message: () => 'this field must contain only lowercase letters.',
+    message: () => 'este campo solo debe contener letras minúsculas.',
   },
   alphabetsOnly: {
     test: ({ value }) => !!value?.toString().match(/^[a-z A-Z]+$/),
-    message: () => 'this field must contain only letters.',
+    message: () => 'este campo solo debe contener letras.',
   },
   alphabetsUppercase: {
     test: ({ value }) => !!value?.toString().match(/[A-Z]/),
@@ -74,7 +74,7 @@ export const ruleHub: Record<string, Rule> = {
         .match(
           /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         ),
-    message: () => 'this field has to be a valid email address.',
+    message: () => 'este campo tiene que contener un email correcto.',
   },
   exact: {
     test: ({ value }, [fieldName], form) => {
