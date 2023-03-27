@@ -192,7 +192,7 @@ const generateForm = (
     const value = (typeof param === 'object' && param.value) || '';
     const field: FormFieldNormalized = reactive({
       name,
-      value: value !== undefined ? value : '',
+      value: value === undefined ? '' : value,
       label: keys[name].label || 'Label',
       meta: keys[name].meta || null,
       rules: (typeof param === 'object' && param.rules) || ['required'],

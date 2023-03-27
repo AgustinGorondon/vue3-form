@@ -4,11 +4,14 @@ export type RuleName = 'alphabets' | 'alphabetsLowercase' | 'alphabetsLowercaseO
 export type FormPropertyKey = 'error' | 'loading' | 'success' | 'touched' | 'valid';
 export type ServerErrors = Record<string, string[]>;
 export type ValidationCallback = (status: boolean) => void;
-export type FieldMetaType = 'SearchSelect' | 'CheckBox' | 'Input' | null;
+export type FieldMetaType = 'SearchSelect' | 'CheckBox' | 'Input' | 'InputDate' | 'InputSearch' | any;
 export interface FieldMeta {
     type?: FieldMetaType;
-    list?: ComputedRef<any> | any | null;
+    list?: ComputedRef<any> | null;
+    onLoadValue?: ComputedRef<any> | null;
+    loading?: ComputedRef<boolean> | boolean;
     search?: (query: string | string[]) => void;
+    extra?: any;
 }
 export interface FormField {
     rules?: (RuleName | Rule)[];
